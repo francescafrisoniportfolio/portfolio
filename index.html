@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Francesca Frisoni Portfolio</title>
+<meta name="description" content="Portfolio of Francesca Frisoni: SEO, content and digital marketing in English and Italian, Sydney.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Literata:ital,opsz,wght@0,7..72,400;1,7..72,400&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one narrow column, big name on top, selected work as the centrepiece */
+:root{
+  --bg:#F5F7F5; --surface:#FFFFFF; --fg:#14222B; --muted:#4F6068; --line:#D5DDDA;
+  --accent:#0E6B66; --accent-ink:#FFFFFF; --signal:#C8402A; --tint:#E3EFEC;
+  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'Public Sans','Segoe UI',system-ui,sans-serif;
+  --serif:'Literata',Georgia,'Times New Roman',serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E171C; --surface:#152229; --fg:#E8EFEC; --muted:#A3B3B3; --line:#2A3B42;
+  --accent:#4FC3B6; --accent-ink:#0E171C; --signal:#FF8A70; --tint:#17302F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E171C; --surface:#152229; --fg:#E8EFEC; --muted:#A3B3B3; --line:#2A3B42;
+  --accent:#4FC3B6; --accent-ink:#0E171C; --signal:#FF8A70; --tint:#17302F; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-block:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:960px;margin:0 auto}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;text-wrap:balance}
+header{padding-block:56px 40px}
+.eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+h1{font-size:clamp(44px,9vw,92px);font-weight:700;letter-spacing:-.02em}
+h1 span{color:var(--accent)}
+.lede{font-size:clamp(18px,2.4vw,22px);max-width:34em;margin:20px 0 0}
+.lede-it{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:17px;max-width:34em;margin:8px 0 0}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:11px 18px;border-radius:6px;font-weight:600;text-decoration:none;font-size:15px;border:2px solid var(--accent);cursor:pointer;font-family:var(--body)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{background:transparent;color:var(--accent)}
+section{padding-block:40px;border-top:1px solid var(--line)}
+h2{font-size:clamp(26px,4vw,36px);margin-bottom:6px}
+.sub{color:var(--muted);margin:0 0 24px;max-width:40em}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px;min-width:0}
+.card h3{font-size:20px;margin-bottom:4px}
+.meta{font-size:13px;color:var(--muted);margin:0 0 12px}
+.card p{margin:0 0 10px}
+.card ul{margin:0;padding-left:18px}
+.card li{margin-bottom:4px}
+.wide{grid-column:1/-1}
+.posts-lead{margin:16px 0 0 !important;color:var(--muted)}
+.posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:12px 0 4px}
+.posts figure{margin:0;min-width:0}
+.posts img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:6px}
+.posts figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+.posts.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
+.posts.flyers img{max-width:340px}
+.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:18px 0}
+.shot{margin:0;min-width:0}
+.frame{height:420px;overflow-y:auto;border:1px solid var(--line);border-radius:6px;background:var(--bg)}
+.frame img{display:block;width:100%;height:auto}
+.shot figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+@media (max-width:720px){.shots,.posts,.posts.two{grid-template-columns:minmax(0,1fr)}}
+.tag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:var(--tint);color:var(--accent);margin-bottom:10px}
+.tag.wip{background:transparent;border:1px dashed var(--signal);color:var(--signal)}
+.note{font-size:14px;color:var(--muted);margin-top:14px}
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 24px}
+.skills h3{font-size:16px;margin-bottom:6px;color:var(--accent)}
+.skills ul{list-style:none;margin:0;padding:0;font-size:15px}
+.skills li{padding:3px 0;border-bottom:1px solid var(--line)}
+.contact{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.mail{font-family:var(--display);font-size:clamp(20px,3.4vw,28px);font-weight:500;overflow-wrap:anywhere;user-select:all}
+footer{padding-block:28px 48px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+@media (max-width:720px){
+  .grid,.skills{grid-template-columns:minmax(0,1fr)}
+  header{padding-block:36px 28px}
+}
+@media (prefers-reduced-motion:no-preference){.btn{transition:transform .15s}.btn:hover{transform:translateY(-2px)}}
+</style>
+</head>
+<body><div class="wrap">
+<header>
+  <p class="eyebrow">SEO · Content · Digital marketing · Sydney</p>
+  <h1>Francesca <span>Frisoni</span></h1>
+  <p class="lede">I write, translate and market in English and Italian. Over five years of content, social media and SEO for businesses in Australia, Italy and Japan.</p>
+  <p class="lede-it" lang="it">Scrivo, traduco e faccio marketing in italiano e in inglese.</p>
+  <div class="links">
+    <a class="btn primary" href="https://www.upwork.com/freelancers/~01ef9234d26388b6c3" target="_blank" rel="noopener">Client reviews on Upwork</a>
+    <a class="btn ghost" href="#contact">Get in touch</a>
+  </div>
+</header>
+
+<section id="work">
+  <h2>Selected work</h2>
+  <p class="sub">Projects from my own jobs and freelance clients.</p>
+  <div class="grid">
+    <article class="card wide">
+      <span class="tag">Website</span>
+      <h3>Trasferirsi a Sydney Australia</h3>
+      <p class="meta">Website for Comandini Migration · WordPress with the Divi theme</p>
+      <p>I did everything on this site: the design, all the text and the basic SEO. It is an Italian-language site with pages for visas, courses, booking a consultation, guides and e-books, and a blog. I also write the blog posts and newsletters.</p>
+      <div class="shots">
+        <figure class="shot"><div class="frame" tabindex="0" role="region" aria-label="Homepage screenshot, scrollable"><img src="img/home.jpg" alt="Homepage of trasferirsiasydney.com with the headline Vivere in Australia, a section on what the company does, and a call to book a consultation"></div><figcaption>Homepage (scroll inside the frame)</figcaption></figure>
+        <figure class="shot"><div class="frame" tabindex="0" role="region" aria-label="Courses page screenshot, scrollable"><img src="img/courses.jpg" alt="Professional courses page listing business, marketing, hospitality, beauty, chef and other courses with photos"></div><figcaption>Courses page</figcaption></figure>
+        <figure class="shot"><div class="frame" tabindex="0" role="region" aria-label="Blog page screenshot, scrollable"><img src="img/blog.jpg" alt="News page with blog posts about visas, Medicare, tax file numbers and where to live in Australia"></div><figcaption>Blog</figcaption></figure>
+      </div>
+      <p><a href="https://trasferirsiasydney.com/" target="_blank" rel="noopener">Visit trasferirsiasydney.com</a></p>
+    </article>
+    <article class="card wide">
+      <span class="tag">Community and social</span>
+      <h3>Comandini Migration</h3>
+      <p class="meta">Marketing Manager, Sydney · Jul 2022 – Jan 2023</p>
+      <ul>
+        <li>Ran the company's two Facebook groups, in Italian ("Trasferirsi a Sydney-Australia") and English ("Moving to Australia", around 20,000 members).</li>
+        <li>Planned, designed and wrote Facebook posts, and planned Instagram posts, reels and videos, about courses and migration news.</li>
+        <li>Wrote and designed flyers, and wrote newsletters and blog posts for the website.</li>
+        <li>Found new leads by helping people who wanted to move to Australia.</li>
+      </ul>
+      <p class="posts-lead">Facebook posts I designed and wrote for the company page. The posts are in Italian.</p>
+      <div class="posts">
+        <figure><img src="img/fb-consultation.jpg" alt="Facebook post dated 10 August 2022 from Trasferirsi a Sydney - Australia. The graphic is titled Prenota una consulenza gratuita, in 3 semplici step, with a phone showing the website." loading="lazy"><figcaption>10 Aug 2022 · How to book a free consultation in 3 steps</figcaption></figure>
+        <figure><img src="img/fb-study.jpg" alt="Facebook post dated 29 September 2022 asking Cosa posso studiare in Australia? Graphic panels cover VET courses, trade courses and English courses, with a prompt to get in touch." loading="lazy"><figcaption>29 Sep 2022 · What can I study in Australia? VET, trade and English courses</figcaption></figure>
+        <figure><img src="img/fb-services.jpg" alt="Facebook post dated 19 January 2023 introducing the company's services: visa guide, student visa, working holiday visa and moving to Australia." loading="lazy"><figcaption>19 Jan 2023 · The company's services: visas, student visa and working holiday visa</figcaption></figure>
+      </div>
+      <p class="posts-lead">Two of my replies to enquiries in the "Moving to Australia" group, which has around 20,000 members. Names are hidden.</p>
+      <div class="posts two">
+        <figure><img src="img/fb-reply-visa.jpg" alt="Screenshot of my reply to a member in the Moving to Australia Facebook group. I suggest a Working Holiday Visa, explain that it allows travel and work for a year with renewals for a second and third year, and offer help with the application. Names are hidden." loading="lazy"><figcaption>Reply to a visa enquiry: Working Holiday Visa advice</figcaption></figure>
+        <figure><img src="img/fb-reply-welcome.jpg" alt="Screenshot of my welcome reply in the Moving to Australia Facebook group. I suggest that a family planning to move to Australia speak to a migration lawyer, and offer a consultation. The member's name is hidden." loading="lazy"><figcaption>Welcome and advice for a family planning to move to Australia</figcaption></figure>
+      </div>
+    </article>
+    <article class="card wide">
+      <span class="tag">Design and writing</span>
+      <h3>Flyers and free e-books</h3>
+      <p class="meta">Trasferirsi a Sydney · Italian-language materials</p>
+      <p>I wrote and designed two flyers for the company. One introduces the team and what they offer. The other presents the study in Australia service.</p>
+      <div class="posts two flyers">
+        <figure><img src="img/flyer-company.jpg" alt="Flyer titled Vivi, lavora e studia in Australia. It introduces the company, an immigration and education agency led by a lawyer and immigration agent, with 20 years of experience, and shows the website." loading="lazy"><figcaption>Company flyer: who we are and what we offer</figcaption></figure>
+        <figure><img src="img/flyer-study.jpg" alt="Flyer titled Studia in Australia. It lists university courses, VET courses, English tests such as IELTS and PTE, and a free consultation with student advisors." loading="lazy"><figcaption>Study flyer: courses, English tests and a free consultation</figcaption></figure>
+      </div>
+      <p>I also wrote and designed free e-books for the website. They include guides to the best websites for finding work and for finding accommodation in Australia.</p>
+      <p><a href="https://trasferirsiasydney.com/guide-ebook/" target="_blank" rel="noopener">See the free guides on trasferirsiasydney.com</a></p>
+    </article>
+    <article class="card">
+      <span class="tag">Copywriting and SEO</span>
+      <h3>Punto Co Ltd.</h3>
+      <p class="meta">Copywriter, Japan (remote) · Jan 2016 – present</p>
+      <ul>
+        <li>Wrote website copy, email campaigns, blog posts, e-books and social posts in one brand voice.</li>
+        <li>Researched and planned content for the company's website, videos and book publications.</li>
+        <li>Updated older content to rank better in search.</li>
+      </ul>
+    </article>
+    <article class="card">
+      <span class="tag">Translation</span>
+      <h3>Freelance translator</h3>
+      <p class="meta">Self-employed · Jan 2016 – present</p>
+      <ul>
+        <li>Translated text and audio between English, Spanish and Italian.</li>
+        <li>Kept the meaning and tone of the original, then proofread every piece.</li>
+        <li>Reviews from clients are on my Upwork profile.</li>
+      </ul>
+    </article>
+    <article class="card wide">
+      <span class="tag">Case study</span>
+      <h3>Do AI tools mention and link UTS?</h3>
+      <p class="meta">GEO research on Sydney universities · November 2026</p>
+      <p>I tested how AI tools answer questions from international students who are looking for a course in Sydney. I asked 5 questions in ChatGPT, Perplexity, Gemini, Google AI Overviews and Claude. For each answer, I recorded which universities were mentioned and which were linked to their own website.</p>
+      <p><strong>Main finding:</strong> UTS was mentioned in 72% of answers, tied for second place. But its own website was linked in only 28% of answers, the lowest of the top four universities. Some tools linked to agency sites or Google Maps instead of the university.</p>
+      <p>With Claude's help, I also reviewed two UTS international student pages and wrote recommended changes, such as adding tuition fees and application dates, and showing a "last updated" date.</p>
+      <p><strong>How I did this:</strong> I designed the study, ran the AI checks and recorded the results myself. I used Claude to help build the tools and draft the report.</p>
+      <ul>
+        <li><a href="https://claude.ai/artifact/TEmwAZsj7tE7xk85SNKifn" target="_blank" rel="noopener">Read the full report</a> (drafted with Claude)</li>
+        <li><a href="files/ai-mention-tracker.pdf" target="_blank" rel="noopener">AI Mention Tracker (PDF)</a>, a tool built with Claude to record the checks</li>
+        <li><a href="files/geo-audit-generator.pdf" target="_blank" rel="noopener">GEO Audit Generator (PDF)</a>, a tool built with Claude that scores a page and suggests changes</li>
+      </ul>
+      <p class="note">This is an independent study project. It is not connected to UTS. The sample is small and AI answers change often.</p>
+    </article>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills and tools</h2>
+  <p class="sub">What I use every week.</p>
+  <div class="skills">
+    <div><h3>Search</h3><ul><li>SEO and keyword research</li><li>Google Search Console</li><li>Moz, Yoast, SEMrush</li><li>GEO (studying)</li></ul></div>
+    <div><h3>Content and social</h3><ul><li>Copywriting and blogs</li><li>Newsletters and e-books</li><li>Meta Business Suite</li><li>Hootsuite and Later</li></ul></div>
+    <div><h3>Web and data</h3><ul><li>Google Analytics</li><li>WordPress</li><li>Canva, basic Photoshop</li><li>Basic HTML and CSS</li></ul></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p class="sub">Open to entry-level SEO, digital marketing and marketing analytics roles in Sydney.</p>
+  <div class="contact">
+    <span class="mail" id="mail">francy.free84@gmail.com</span>
+    <button class="btn ghost" id="copy" type="button">Copy email</button>
+  </div>
+</section>
+
+<footer>Francesca Frisoni · Hurlstone Park, Sydney NSW</footer>
+</div>
+
+<script>
+(function(){
+  var b=document.getElementById('copy'),m=document.getElementById('mail');
+  b.addEventListener('click',function(){
+    function sel(){var r=document.createRange();r.selectNodeContents(m);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected, press copy';}
+    try{navigator.clipboard.writeText(m.textContent).then(function(){b.textContent='Copied';},sel);}catch(e){sel();}
+  });
+})();
+</script>
+</body>
+</html>
